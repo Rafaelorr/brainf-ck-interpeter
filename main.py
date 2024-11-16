@@ -46,8 +46,21 @@ def main(pointer:int, filename:str, data_list :list, loop :list) -> None:
               # output command
               print(chr(data_list[pointer]))
           elif code[letter] == "/":
-              # clear command
-              data_list = [0] * len(data_list)
+              # clear data command
+              data_list :int = [0] * len(data_list)
+          elif code[letter] == ";":
+              # clear screen command
+              os.system('cls' if os.name == 'nt' else 'clear')
+          elif code[letter] == "&":
+              # jump de waard van de cel voorwaarsts
+              pointer += data_list[pointer]
+              while pointer > len(data_list):
+                  pointer -= 1
+          elif code[letter] == "!":
+              # jump de waard van de cel achterwaartst
+              pointer -= data_list[pointer]
+              while pointer < 0:
+                  pointer += 1
           else:
               continue
           letter + 1
