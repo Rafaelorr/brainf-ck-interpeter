@@ -61,6 +61,14 @@ def main(pointer:int, filename:str, data_list :list, loop :list) -> None:
               pointer -= data_list[pointer]
               while pointer < 0:
                   pointer += 1
+          elif code[letter] == "*":
+              # vermenigvuldig het getal op en voor de pointer met elkaar
+              data_list[pointer] = data_list[pointer -1] * data_list[pointer]
+          elif code[letter] == "/":
+              # deel het getal op en voor de pointer met elkaar
+              # het deeltal is het getal voor de pointer
+              # de deler is het getal op de pointer
+              data_list[pointer] = data_list[pointer -1] / data_list[pointer]
           else:
               continue
           letter + 1
