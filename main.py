@@ -1,6 +1,11 @@
 import os
+import sys
 
-filename :str = input("bestandnaam van de code: ")
+try:
+  filename :str = sys.argv[1]
+except IndexError:
+   print("geef een filenaam")
+   exit(1)
 pointer :int = 0
 data_list :list[int] = [0] * 100
 
