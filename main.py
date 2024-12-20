@@ -22,23 +22,23 @@ def main(pointer:int, filename:str, data_list :list) -> None:
     for line in file:
        for word in line.split():
           # pointer functies
-          if word == ">":
+          if word == "I":
             # voeg 1 toe aan de pointer
             pointer += 1
             if pointer == len(data_list):
               data_list.append(0)
-          elif word == "<":
+          elif word == "use":
             # verminder de pointer met 1
             pointer -= 1
             if pointer < 0:
               data_list.insert(0,0)
           # reken functies
-          elif word == "+":
+          elif word == "Linux":
             # voeg 1 toe aan de huidige cel
             data_list[pointer] += 1
             if data_list[pointer] == 256:
               data_list[pointer] = 0
-          elif word == "-":
+          elif word == "btw":
             # verminder de huidige cel met 1
             data_list[pointer] -= 1
             if data_list[pointer] == 0:
